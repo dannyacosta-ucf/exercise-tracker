@@ -1,0 +1,174 @@
+@import "normalize.css";
+
+:root {
+  font-family: Tahoma, Helvetica, Arial sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+  color: rgb(64, 64, 64);
+}
+
+p {
+  line-height: 1.5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.menu-screen-container {
+  position: relative;
+  padding: 3rem;
+  width: calc(100% - 6rem);
+  max-width: 700px;
+  margin: auto;
+}
+
+.exercise-card-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: calc(50% - 0.5rem) auto;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.exercise-card {
+  padding: 2rem 2rem;
+  font-size: 1.25rem;
+  color: white;
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  border-radius: 1rem;
+  background-color: #308cac;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.exercise-card:active {
+  opacity: 0.8;
+  transform: scale(0.9);
+  transition-timing-function: ease-out;
+}
+
+.exercise-card-name {
+  font-weight: bold;
+  margin-bottom: 0.33rem;
+}
+
+.exercise-card-type {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.back-button::before {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #308cac;
+  background-image: url("pointer.png");
+  background-size: 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.back-button {
+  position: absolute;
+  display: grid;
+  grid-template-columns: auto auto;
+  top: 2.75rem;
+  left: 3rem;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
+}
+
+.back-button:active {
+  opacity: 0.5;
+}
+
+.action-button {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: #308cac;
+  border: none;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  cursor: pointer;
+  transform: scale(1);
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+.action-button.outlined {
+  background-color: transparent;
+  border: 2px solid #308cac;
+  color: #308cac;
+}
+
+.action-button:not(:disabled):active {
+  opacity: 0.8;
+  transform: scale(0.9);
+  transition-timing-function: ease-out;
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.exercise-content-container {
+  position: relative;
+  margin-top: 3rem;
+  display: grid;
+  width: 100%;
+  justify-items: center;
+}
+
+.prominent-text {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.button-container {
+  display: grid;
+  width: 50%;
+  gap: 0.75rem;
+}
+
+@media screen and (max-width: 650px) {
+  .exercise-card-container {
+    grid-template-columns: auto;
+    gap: 0.75rem;
+  }
+}
